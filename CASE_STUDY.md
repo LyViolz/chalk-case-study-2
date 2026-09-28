@@ -1,6 +1,7 @@
 # Chalk
 
-Live app: https://chalk-case-study-2-p9m9.onrender.com  
+Live app: https://chalk-case-study-2-p9m9.onrender.com
+
 Code: https://github.com/LyViolz/chalk-case-study-2
 
 ## How it works
