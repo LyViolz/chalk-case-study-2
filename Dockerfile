@@ -19,7 +19,6 @@ ENV PORT=3000
 ENV DATABASE_PATH=/app/data/chalk.db
 
 RUN mkdir -p /app/data && chown node:node /app/data
-COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/lib ./lib
