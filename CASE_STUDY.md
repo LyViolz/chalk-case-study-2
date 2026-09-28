@@ -38,7 +38,12 @@ A `[click](javascript:alert(1))` link was another unsafe input because the old r
 - `npm run seed` followed by `npm run build`: successful production build.
 - In the patched running app, the previously stored payload appears as text, there is no image element in the post, the page title remains `Chalk`, and the seeded bold formatting still renders.
 - Navigating directly to `/mod` as a member shows no private notes. Signing in as an officer shows the desk and its navigation link.
+- On the hosted app, `/api/health` returned HTTP 200, member sign-in and posting worked, the test payload stayed text while bold and link markdown rendered, and the test post was removed afterward. A member visiting `/mod` directly saw no private note.
 
 ## Hosting
 
-The app needs a persistent writable filesystem for its SQLite database. Use the provided Dockerfile and mount `/app/data` as a persistent volume. The Docker build seeds its database before the Next.js build, and the runtime volume retains accounts and posts. Add the final public URL here after deployment.
+Public URL: https://chalk-case-study-2-p9m9.onrender.com
+
+Source repository: https://github.com/LyViolz/chalk-case-study-2
+
+The app is deployed as a Docker web service on Render's Free plan. It is reachable from the public URL, but this plan has no persistent disk: accounts, posts, and sessions added after deployment can be lost when the service spins down, restarts, or redeploys. The demo database is seeded again from the image. For durable use, attach a persistent disk at `/app/data` on a paid service. See [Render's Free plan limitations](https://render.com/docs/free) and [persistent disk documentation](https://render.com/docs/disks).
