@@ -1,0 +1,10 @@
+node_modules/
+.next/
+data/*.db
+data/*.db-journal
+data/*.db-shm
+data/*.db-wal
+.env
+.env.local
+.DS_Store
+.playwright-cli/
